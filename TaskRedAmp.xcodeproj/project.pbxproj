@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA19A4432B9620A000DD5660 /* QuizQuestionsAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19A4422B9620A000DD5660 /* QuizQuestionsAnswers.swift */; };
 		AA78A1E92B95CB7C00ADC006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A1E82B95CB7C00ADC006 /* AppDelegate.swift */; };
 		AA78A1EB2B95CB7C00ADC006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A1EA2B95CB7C00ADC006 /* SceneDelegate.swift */; };
 		AA78A1ED2B95CB7C00ADC006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A1EC2B95CB7C00ADC006 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 		AA78A2002B95CB7D00ADC006 /* TaskRedAmpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A1FF2B95CB7D00ADC006 /* TaskRedAmpTests.swift */; };
 		AA78A20A2B95CB7D00ADC006 /* TaskRedAmpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A2092B95CB7D00ADC006 /* TaskRedAmpUITests.swift */; };
 		AA78A20C2B95CB7D00ADC006 /* TaskRedAmpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A20B2B95CB7D00ADC006 /* TaskRedAmpUITestsLaunchTests.swift */; };
+		AA78A2192B95D96F00ADC006 /* BaseQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA78A2182B95D96F00ADC006 /* BaseQuizView.swift */; };
+		AA92C23B2B96326F0090B208 /* MozogQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92C23A2B96326F0090B208 /* MozogQuiz.swift */; };
+		AA92C23D2B96478F0090B208 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92C23C2B96478F0090B208 /* FinalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA19A4422B9620A000DD5660 /* QuizQuestionsAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsAnswers.swift; sourceTree = "<group>"; };
 		AA78A1E52B95CB7C00ADC006 /* TaskRedAmp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskRedAmp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA78A1E82B95CB7C00ADC006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA78A1EA2B95CB7C00ADC006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		AA78A2052B95CB7D00ADC006 /* TaskRedAmpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskRedAmpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA78A2092B95CB7D00ADC006 /* TaskRedAmpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRedAmpUITests.swift; sourceTree = "<group>"; };
 		AA78A20B2B95CB7D00ADC006 /* TaskRedAmpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRedAmpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AA78A2182B95D96F00ADC006 /* BaseQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQuizView.swift; sourceTree = "<group>"; };
+		AA92C23A2B96326F0090B208 /* MozogQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MozogQuiz.swift; sourceTree = "<group>"; };
+		AA92C23C2B96478F0090B208 /* FinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +109,9 @@
 			children = (
 				AA78A1E82B95CB7C00ADC006 /* AppDelegate.swift */,
 				AA78A1EA2B95CB7C00ADC006 /* SceneDelegate.swift */,
-				AA78A1EC2B95CB7C00ADC006 /* ViewController.swift */,
-				AA78A1EE2B95CB7C00ADC006 /* Main.storyboard */,
+				AA92C2372B96315C0090B208 /* Model */,
+				AA92C2382B96316F0090B208 /* View */,
+				AA92C2392B9631840090B208 /* Controller */,
 				AA78A1F12B95CB7D00ADC006 /* Assets.xcassets */,
 				AA78A1F32B95CB7D00ADC006 /* LaunchScreen.storyboard */,
 				AA78A1F62B95CB7D00ADC006 /* Info.plist */,
@@ -125,6 +134,33 @@
 				AA78A20B2B95CB7D00ADC006 /* TaskRedAmpUITestsLaunchTests.swift */,
 			);
 			path = TaskRedAmpUITests;
+			sourceTree = "<group>";
+		};
+		AA92C2372B96315C0090B208 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA19A4422B9620A000DD5660 /* QuizQuestionsAnswers.swift */,
+				AA92C23A2B96326F0090B208 /* MozogQuiz.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA92C2382B96316F0090B208 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA78A1EE2B95CB7C00ADC006 /* Main.storyboard */,
+				AA92C23C2B96478F0090B208 /* FinalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA92C2392B9631840090B208 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA78A1EC2B95CB7C00ADC006 /* ViewController.swift */,
+				AA78A2182B95D96F00ADC006 /* BaseQuizView.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA92C23D2B96478F0090B208 /* FinalView.swift in Sources */,
+				AA78A2192B95D96F00ADC006 /* BaseQuizView.swift in Sources */,
+				AA92C23B2B96326F0090B208 /* MozogQuiz.swift in Sources */,
 				AA78A1ED2B95CB7C00ADC006 /* ViewController.swift in Sources */,
 				AA78A1E92B95CB7C00ADC006 /* AppDelegate.swift in Sources */,
 				AA78A1EB2B95CB7C00ADC006 /* SceneDelegate.swift in Sources */,
+				AA19A4432B9620A000DD5660 /* QuizQuestionsAnswers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
