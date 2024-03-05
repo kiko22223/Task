@@ -31,7 +31,7 @@ struct MozogQuiz {
     ]
     
     var questionOrder = 0
-    var numberOfPoints = 0
+    var userPointsNumber = 0
     
     func checkCorrection(_ userAnswer : String) -> UIColor {
         if userAnswer == kvizoveOtazky[questionOrder].rightAnswer {
@@ -40,12 +40,14 @@ struct MozogQuiz {
             return .red
         }
     }
-    func pointCalc (_ userAnswer : String) -> Int {
-        if userAnswer == kvizoveOtazky[questionOrder].rightAnswer {
-            return 1
-        } else {
-            return 0
-        }
+
+    
+    mutating func userPointsCalc(_ userAnswer: String) {
+                if userAnswer == kvizoveOtazky[questionOrder].rightAnswer {
+                    userPointsNumber += 1
+                } else {
+                    userPointsNumber += 0
+                }
     }
     
     func getQ() -> String {
@@ -59,8 +61,33 @@ struct MozogQuiz {
     mutating func nextQ() {
         if questionOrder + 1 < kvizoveOtazky.count {
             questionOrder += 1
-        } else {
-            questionOrder = 0
+        } 
+        else {
+            
+        }
+    }
+    
+    func markByPercentage (_ userPoints: Int) -> String {
+        let percents = Double(userPoints) / Double(kvizoveOtazky.count) * 100
+        switch percents {
+            
+        case 80...100 :
+            return "🤩"
+            
+        case 60...79:
+            return "😁"
+            
+        case 40...59:
+            return "🥹"
+            
+        case 20...39:
+            return "🙂"
+            
+        case 5...19:
+            return "🫥"
+            
+        default:
+            return "✌️"
         }
     }
 

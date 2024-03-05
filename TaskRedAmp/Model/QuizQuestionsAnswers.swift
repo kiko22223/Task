@@ -10,4 +10,5 @@ struct questionsAnswers {
     let question : String
     let answers : [String]
     let rightAnswer : String
+//    let rightAnswer: [String]
 }

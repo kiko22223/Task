@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 class BaseQuizView: UIViewController {
     
-    var userPointsNumber = 0
     
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var quizButton1: UIButton!
@@ -20,6 +19,7 @@ class BaseQuizView: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     var mozog = MozogQuiz()
+    var end = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,22 +30,29 @@ class BaseQuizView: UIViewController {
     @IBAction func answerButtonFunc(_ sender: UIButton) {
         let answer = sender.titleLabel?.text
         sender.tintColor = mozog.checkCorrection(answer!)
-        userPointsNumber += mozog.pointCalc(answer!)
-        print(userPointsNumber)
-        mozog.nextQ()
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+//        if mozog.kvizoveOtazky[mozog.questionOrder].rightAnswer.count == 1{
+            mozog.userPointsCalc(answer!)
+            mozog.nextQ()
+            Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+//        } else {
+            
+//        }
         
     }
     
     
     @objc func updateUI() {
+        print(mozog.questionOrder + 1)
+        print(mozog.kvizoveOtazky.count)
         if mozog.questionOrder + 1 == mozog.kvizoveOtazky.count {
             let storyboardToGo = self.storyboard?.instantiateViewController(withIdentifier: "finalView") as! FinalView
+            storyboardToGo.points = userPoints.text
+            storyboardToGo.mark = mozog.markByPercentage(mozog.userPointsNumber)
             self.navigationController?.pushViewController(storyboardToGo, animated: true)
         }
         progressBar.progress = mozog.progress()
         questionText.text = mozog.getQ()
-        userPoints.text = String(userPointsNumber)
+        userPoints.text = String(mozog.userPointsNumber)
         
         quizButton1.setTitle(mozog.kvizoveOtazky[mozog.questionOrder].answers[0], for: .normal)
         quizButton2.setTitle(mozog.kvizoveOtazky[mozog.questionOrder].answers[1], for: .normal)
@@ -57,7 +64,4 @@ class BaseQuizView: UIViewController {
         quizButton4.tintColor = .link
 
     }
-
-    
-    
 }
