@@ -63,7 +63,7 @@ struct MozogQuiz {
             questionOrder += 1
         } 
         else {
-            
+            questionOrder = 0
         }
     }
     

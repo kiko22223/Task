@@ -37,19 +37,19 @@ class BaseQuizView: UIViewController {
 //        } else {
             
 //        }
-        
+        if mozog.questionOrder == 0 {
+            let storyboardToGo = self.storyboard?.instantiateViewController(withIdentifier: "finalView") as! FinalView
+            storyboardToGo.points = userPoints.text
+            storyboardToGo.mark = mozog.markByPercentage(mozog.userPointsNumber)
+            self.navigationController?.pushViewController(storyboardToGo, animated: true)
+        }
     }
     
     
     @objc func updateUI() {
         print(mozog.questionOrder + 1)
         print(mozog.kvizoveOtazky.count)
-        if mozog.questionOrder + 1 == mozog.kvizoveOtazky.count {
-            let storyboardToGo = self.storyboard?.instantiateViewController(withIdentifier: "finalView") as! FinalView
-            storyboardToGo.points = userPoints.text
-            storyboardToGo.mark = mozog.markByPercentage(mozog.userPointsNumber)
-            self.navigationController?.pushViewController(storyboardToGo, animated: true)
-        }
+      
         progressBar.progress = mozog.progress()
         questionText.text = mozog.getQ()
         userPoints.text = String(mozog.userPointsNumber)
