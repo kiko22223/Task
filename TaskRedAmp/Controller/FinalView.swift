@@ -10,13 +10,18 @@ import UIKit
 
 class FinalView: UIViewController {
     
+    //MARK: IBOutlets
     
     @IBOutlet weak var finalLabel: UILabel!
     @IBOutlet weak var finalButton: UIButton!
     @IBOutlet weak var emojiLabel: UILabel!
+    
+    //MARK: Local variables
     var mark : String?
     let mozog = MozogQuiz()
     var points: String?
+    
+    
     override func viewDidLoad() {
         navigationController?.navigationBar.isHidden = true
         super.viewDidLoad()
@@ -29,6 +34,7 @@ class FinalView: UIViewController {
     }
     
 
+    //MARK: IBAction to play quiz again
     
     @IBAction func playAgain(_ sender: UIButton) {
         let storyboardToGo = self.storyboard?.instantiateViewController(withIdentifier: "startStoryboard") as! ViewController

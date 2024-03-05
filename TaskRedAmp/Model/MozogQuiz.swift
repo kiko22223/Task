@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: Array of questions
+
 struct MozogQuiz {
     let kvizoveOtazky: [questionsAnswers] = [
         questionsAnswers(question: "Hlavné mesto Slovenska?", answers: ["Košice", "Bratislava", "Nitra", "Žilina"], rightAnswer: "Bratislava"),
@@ -30,8 +32,12 @@ struct MozogQuiz {
         questionsAnswers(question: "Koľko kostí má ľudská lebka?", answers: ["25", "23", "24","22"], rightAnswer: "22")
     ]
     
+    //MARK: Local variables that are used in other screens
+    
     var questionOrder = 0
     var userPointsNumber = 0
+    
+    //MARK: Functions
     
     func checkCorrection(_ userAnswer : String) -> UIColor {
         if userAnswer == kvizoveOtazky[questionOrder].rightAnswer {

@@ -152,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				AA78A1EE2B95CB7C00ADC006 /* Main.storyboard */,
-				AA92C23C2B96478F0090B208 /* FinalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 		AA92C2392B9631840090B208 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AA92C23C2B96478F0090B208 /* FinalView.swift */,
 				AA78A1EC2B95CB7C00ADC006 /* ViewController.swift */,
 				AA78A2182B95D96F00ADC006 /* BaseQuizView.swift */,
 			);
